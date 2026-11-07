@@ -1,124 +1,335 @@
+
 <!doctype html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Artist portfolio, exhibitions, activities and studio diary.">
+<meta name="description" content="梨 文 — Artist portfolio, exhibitions and journal.">
 <title>梨 文 — Official Website</title>
-<style>
-:root{
-  --paper:#ffffff; --ink:#20211f; --muted:#77786f; --line:#c9c7bd;
-  --accent:#c8ef55; --serif: Georgia,"Times New Roman",serif;
-  --sans: "Helvetica Neue",Arial,"Noto Sans JP",sans-serif;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65}
-a{color:inherit;text-decoration:none}
-a:hover{opacity:.62}
-.wrap{width:min(1120px,calc(100% - 48px));margin:auto}
 
-header{
-  height:76px;
-padding: 0;
-border-bottom:1px solid var(--line);
-display: flex;
-justify-content: space-between;
-align-items: center;
+<style>
+:root {
+  --paper: #ffffff;
+  --ink: #20211f;
+  --muted: #77786f;
+  --line: #c9c7bd;
+  --accent: #c8ef55;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
 }
-  
-.logo{font:italic 22px var(--serif);letter-spacing:.02em}
-nav{display:flex;gap:28px;font-size:10px;letter-spacing:.15em}
-.menu{display:none}
-.hero{min-height:650px;display:grid;grid-template-columns:1.05fr .95fr;gap:5vw;align-items:center;padding:72px 0 92px}
-.kicker,.eyebrow{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-h1{
-  font:normal clamp(38px,6vw,64px)/1 var(--serif);
-  letter-spacing:-.04em;
-  margin:0;
+
+* {
+  box-sizing: border-box;
 }
-.hero-copy{max-width:430px;font-size:13px;line-height:2;color:#55564f}
-.hero-art{height:475px;position:relative;overflow:hidden;background:url('./イラスト150.png') center/cover no-repeat}
-.hero-art:before{content:"";position:absolute;width:64%;height:82%;left:18%;top:8%;background:linear-gradient(145deg,#b6b6a9,#e8e3d7 48%,#777b70);clip-path:polygon(45% 0,100% 24%,78% 100%,0 76%,12% 18%)}
-.hero-art:after{content:"";position:absolute;width:42%;height:58%;left:34%;top:23%;background:var(--accent);mix-blend-mode:multiply;clip-path:polygon(50% 0,100% 38%,67% 100%,0 70%,10% 20%)}.hero-art:before,.hero-art:after{display:none}
-.art-note{position:absolute;z-index:2;bottom:18px;left:20px;font:italic 12px var(--serif);color:#333}
-.scroll{font-size:9px;letter-spacing:.2em;margin-top:55px;color:var(--muted)}
-section{padding:88px 0;border-top:1px solid var(--line)}
-.section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:34px}
-h2{font:normal clamp(38px,6vw,64px)/1 var(--serif);letter-spacing:-.04em;margin:0}
-.section-no{font-size:10px;letter-spacing:.18em;color:var(--muted)}
-.exhibition{display:grid;grid-template-columns:1.1fr .9fr;gap:7vw;align-items:center}
-.exhibition-image{min-height:340px;background:#d6d4ca;position:relative;overflow:hidden}
-.exhibition-image:before{content:"";position:absolute;width:54%;height:120%;left:24%;top:-10%;background:#8d8d7f;transform:rotate(19deg);border-radius:48% 52% 12% 18%}
-.exhibition-image:after{content:"";position:absolute;width:36%;height:75%;left:34%;top:12%;background:#e7e2d4;transform:rotate(-12deg);mix-blend-mode:screen}
-.date{font:italic 17px var(--serif);margin:0 0 12px}
-h3{font-size:23px;font-weight:500;line-height:1.4;margin:0 0 16px}
-.details{font-size:12px;color:#5f6058;line-height:2}
-.pill{display:inline-block;margin-top:22px;padding:10px 15px;border:1px solid var(--ink);font-size:9px;letter-spacing:.14em}
-.activity-list{border-top:1px solid var(--line)}
-.activity{display:grid;grid-template-columns:130px 1fr auto;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);font-size:12px}
-.activity time{color:var(--muted)}
-.activity .tag{font-size:9px;letter-spacing:.15em;color:var(--muted)}
-.diary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.diary-card .thumb{aspect-ratio:4/3;background:#d8d6cc;margin-bottom:14px;position:relative;overflow:hidden}
-.diary-card:nth-child(1) .thumb:before{content:"";position:absolute;width:60%;height:130%;left:20%;top:-10%;background:#999b8d;transform:rotate(32deg)}
-.diary-card:nth-child(2) .thumb:before{content:"";position:absolute;width:70%;height:70%;left:15%;top:15%;background:#c7d1a4;border-radius:50% 10% 50% 20%;transform:rotate(-25deg)}
-.diary-card:nth-child(3) .thumb:before{content:"";position:absolute;width:55%;height:110%;left:25%;top:-5%;background:#a6a39a;transform:rotate(-20deg)}
-.diary-card time{font-size:10px;color:var(--muted)}
-.diary-card h3{font-size:15px;margin:7px 0}
-.diary-card p{font-size:11px;color:#65665f}
-.sns-row{display:flex;gap:12px;flex-wrap:wrap}
-.sns-link{border:1px solid var(--line);padding:16px 20px;min-width:180px;font-size:11px;letter-spacing:.08em;display:flex;justify-content:space-between}
-footer{padding:28px 0 38px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:9px;letter-spacing:.13em;color:var(--muted)}
-.accent-mark{display:inline-block;background:var(--accent);padding:0 5px}
-@media(max-width:700px){
- .wrap{width:min(100% - 34px,560px)}
- header{height:65px;padding:0 4%}nav{gap:13px;font-size:8px}
- .hero{grid-template-columns:1fr;min-height:auto;padding:58px 0 68px;gap:32px}
- .hero-art{height:340px}
- .scroll{margin-top:30px}
- section{padding:65px 0}
- .exhibition{grid-template-columns:1fr;gap:28px}
- .exhibition-image{min-height:260px}
- .activity{grid-template-columns:85px 1fr;gap:8px}
- .activity .tag{grid-column:2}
- .diary-grid{grid-template-columns:1fr;gap:28px}
- .diary-card .thumb{aspect-ratio:16/9}
- footer{gap:20px;flex-direction:column}
+
+html {
+  scroll-behavior: smooth;
 }
-  .logo img {
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: .62;
+}
+
+.wrap {
+  width: min(1120px, calc(100% - 48px));
+  margin: auto;
+}
+
+/* HEADER */
+
+header {
+  height: 76px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
   display: block;
   width: 48px;
   height: 48px;
   object-fit: contain;
 }
+
+nav {
+  display: flex;
+  gap: 28px;
+  font-size: 10px;
+  letter-spacing: .15em;
+}
+
+/* COMMON */
+
+section {
+  padding: 88px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 34px;
+}
+
+h1, h2 {
+  font: normal clamp(38px, 6vw, 64px)/1 var(--serif);
+  letter-spacing: -.04em;
+  margin: 0;
+}
+
+.section-no {
+  font-size: 10px;
+  letter-spacing: .18em;
+  color: var(--muted);
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.details {
+  font-size: 12px;
+  color: #5f6058;
+  line-height: 2;
+}
+
+/* NOTE */
+
+.exhibition {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 7vw;
+  align-items: center;
+}
+
+.exhibition-image {
+  min-height: 340px;
+  background:
+    linear-gradient(135deg, #d9d8cf, #aaa99d 55%, #e9e6dc);
+  position: relative;
+  overflow: hidden;
+}
+
+.exhibition-image::before {
+  content: "";
+  position: absolute;
+  width: 54%;
+  height: 120%;
+  left: 24%;
+  top: -10%;
+  background: #8d8d7f;
+  transform: rotate(19deg);
+  border-radius: 48% 52% 12% 18%;
+}
+
+.exhibition-image::after {
+  content: "";
+  position: absolute;
+  width: 36%;
+  height: 75%;
+  left: 34%;
+  top: 12%;
+  background: #e7e2d4;
+  transform: rotate(-12deg);
+  mix-blend-mode: screen;
+}
+
+h3 {
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 16px;
+}
+
+.pill {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 10px 15px;
+  border: 1px solid var(--ink);
+  font-size: 9px;
+  letter-spacing: .14em;
+}
+
+/* SNS */
+
+.hero-copy {
+  max-width: 430px;
+  font-size: 13px;
+  line-height: 2;
+  color: #55564f;
+  margin-bottom: 30px;
+}
+
+.sns-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sns-link {
+  border: 1px solid var(--line);
+  padding: 16px 20px;
+  min-width: 180px;
+  font-size: 11px;
+  letter-spacing: .08em;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 28px 0 38px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: .13em;
+  color: var(--muted);
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+  .wrap {
+    width: min(100% - 34px, 560px);
+  }
+
+  header {
+    height: 65px;
+    padding: 0 4%;
+  }
+
+  .logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  nav {
+    gap: 12px;
+    font-size: 8px;
+  }
+
+  section {
+    padding: 65px 0;
+  }
+
+  .exhibition {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .exhibition-image {
+    min-height: 260px;
+  }
+
+  .section-head {
+    gap: 15px;
+  }
+
+  footer {
+    gap: 15px;
+    flex-direction: column;
+  }
+}
+
 </style>
 </head>
+
 <body>
+
 <div class="wrap">
+
 <header>
-  <a class="logo"href="index.html">
-  <img src="梨アイコン.png" alt="梨 文">
+  <a class="logo" href="index.html">
+    <img src="梨アイコン.png" alt="梨 文">
   </a>
+
   <nav aria-label="Main navigation">
-    <a href="works.html">WORKS</a><a href="exhibition.html">EXHIBITION</a><a href="activity.html">ACTIVITY</a><a href="sns.html">SNS</a>
+    <a href="works.html">WORKS</a>
+    <a href="exhibition.html">EXHIBITION</a>
+    <a href="activity.html">ACTIVITY</a>
+    <a href="sns.html">SNS</a>
   </nav>
 </header>
 
-
-
 <main>
+
+<!-- NOTE -->
+
+<section id="note">
+
+  <div class="section-head">
+    <h1>Note</h1>
+    <span class="section-no">03 / JOURNAL</span>
+  </div>
+
+  <div class="exhibition">
+
+    <div
+      class="exhibition-image"
+      role="img"
+      aria-label="Abstract note and journal artwork">
+    </div>
+
+    <div>
+      <p class="eyebrow">Writing &amp; making</p>
+
+      <h3>制作のこと、日々のこと。</h3>
+
+      <p class="details">
+        制作日記や展示のお知らせ、作品づくりの記録は
+        noteで更新しています。
+        最新の記事はnoteからご覧ください。
+      </p>
+
+      <a
+        class="pill"
+        href="https://note.com/open_violet5153"
+        target="_blank"
+        rel="noopener noreferrer">
+        READ ON NOTE ↗
+      </a>
+
+      <p class="details" style="margin-top:14px">
+        ※ 最新の記事はnoteをご覧ください。
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SNS -->
 
 <section id="sns">
 
   <div class="section-head">
-    <h1>Find me</h1>
+    <h2>Find me</h2>
     <span class="section-no">04 / SOCIAL</span>
   </div>
 
   <p class="hero-copy">
     作品や日々の更新はSNSでも発信しています。
-    お仕事のご依頼やお問い合わせも、こちらからお気軽にご連絡ください。
+    お仕事のご依頼やお問い合わせも、
+    こちらからお気軽にご連絡ください。
   </p>
 
   <div class="sns-row">
@@ -126,14 +337,12 @@ footer{padding:28px 0 38px;border-top:1px solid var(--line);display:flex;justify
     <a class="sns-link"
        href="https://www.instagram.com/nashi.fumi/"
        target="_blank"
-       rel="noopener"
-       aria-label="Instagram">
+       rel="noopener noreferrer">
       INSTAGRAM <span>↗</span>
     </a>
 
     <a class="sns-link"
-       href="mailto:contact.nashifumi@gmail.com"
-       aria-label="Contact">
+       href="mailto:contact.nashifumi@gmail.com">
       CONTACT <span>↗</span>
     </a>
 
@@ -152,46 +361,3 @@ footer{padding:28px 0 38px;border-top:1px solid var(--line);display:flex;justify
 
 </body>
 </html>
-
-
-
-<section id="note">
-  <div class="section-head">
-    <h2>Note</h2>
-    <span class="section-no">03 / JOURNAL</span>
-  </div>
-
-  <div class="exhibition">
-    <div
-      class="exhibition-image"
-      role="img"
-      aria-label="Abstract note and journal artwork"
-    ></div>
-
-    <div>
-      <p class="eyebrow">Writing &amp; making</p>
-
-      <h3>制作のこと、日々のこと。</h3>
-
-      <p class="details">
-        制作日記や展示のお知らせ、作品づくりの記録は
-        noteで更新しています。
-        最新の記事はnoteからご覧ください。
-      </p>
-
-      <a
-        class="pill"
-        href="https://note.com/open_violet5153"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        READ ON NOTE ↗
-      </a>
-
-      <p class="details" style="margin-top:14px">
-        ※ 最新の記事はnoteをご覧ください。
-      </p>
-    </div>
-  </div>
-</section>
-
