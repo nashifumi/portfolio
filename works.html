@@ -136,11 +136,21 @@ footer {
   color: #777;
 }
 
-@media (max-width: 700px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
+@media(max-width:700px){
+ .wrap{width:min(100% - 34px,560px)}
+ header{height:65px;padding:0 4%}nav{gap:13px;font-size:8px}
+ .hero{grid-template-columns:1fr;min-height:auto;padding:58px 0 68px;gap:32px}
+ .hero-art{height:340px}
+ .scroll{margin-top:30px}
+ section{padding:65px 0}
+ .exhibition{grid-template-columns:1fr;gap:28px}
+ .exhibition-image{min-height:260px}
+ .activity{grid-template-columns:85px 1fr;gap:8px}
+ .activity .tag{grid-column:2}
+ .diary-grid{grid-template-columns:1fr;gap:28px}
+ .diary-card .thumb{aspect-ratio:16/9}
+ footer{gap:20px;flex-direction:column}
+}
 
   main {
     padding-top: 45px;
