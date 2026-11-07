@@ -1,25 +1,4 @@
 
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65}
-a{color:inherit;text-decoration:none}
-a:hover{opacity:.62}
-.wrap{width:min(1120px,calc(100% - 48px));margin:auto}
-
-header{
-  height:76px;
-padding: 0;
-border-bottom:1px solid var(--line);
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-  
-.logo{font:italic 22px var(--serif);letter-spacing:.02em}
-nav{display:flex;gap:28px;font-size:10px;letter-spacing:.15em}
-.menu{display:none}
-.hero{min-height:650px;display:grid;grid-template-columns:1.05fr .95fr;gap:5vw;align-items:center;padding:72px 0 92px}
-.kicker,.eyebrow{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-h1{font:normal clamp(56px,9vw,116px)/.92 var(--serif);letter-spacing:-.065em;margin:22px 0 28px}
-.hero-copy{max-width:430px;font-size:13px;line-height:2;color:#55564f}
 .hero-art{height:475px;position:relative;overflow:hidden;background:url('./イラスト150.png') center/cover no-repeat}
 .hero-art:before{content:"";position:absolute;width:64%;height:82%;left:18%;top:8%;background:linear-gradient(145deg,#b6b6a9,#e8e3d7 48%,#777b70);clip-path:polygon(45% 0,100% 24%,78% 100%,0 76%,12% 18%)}
 .hero-art:after{content:"";position:absolute;width:42%;height:58%;left:34%;top:23%;background:var(--accent);mix-blend-mode:multiply;clip-path:polygon(50% 0,100% 38%,67% 100%,0 70%,10% 20%)}.hero-art:before,.hero-art:after{display:none}
@@ -78,10 +57,10 @@ footer{padding:28px 0 38px;border-top:1px solid var(--line);display:flex;justify
 * {box-sizing: border-box;}
 
 body {margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65}
-.wrap {
-  width: min(1120px, calc(100% - 48px));
-  margin: 0 auto;
-}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.62}
+  .wrap {
+  width: min(1120px, calc(100% - 48px));margin: 0 auto;}
 
   header {
     height: 76px;
@@ -91,7 +70,7 @@ body {margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
   align-items: center;
   justify-content: space-between;
   align-items: center;
-}
+  }
 
 .logo{font:italic 22px var(--serif);letter-spacing:.02em}
 nav{display:flex;gap:28px;font-size:10px;letter-spacing:.15em}
