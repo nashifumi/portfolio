@@ -19,11 +19,15 @@ body {
 }
 
 header {
-  padding: 10px 4%;
+  width: min(1120px, calc(100% - 48px));
+  height: 76px;
+  margin: 0 auto;
+  padding: 0;
   border-bottom: 1px solid #ddd;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .logo img {
