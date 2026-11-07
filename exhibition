@@ -1,4 +1,22 @@
-  <section id="exhibition">
+  <!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exhibition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ここに展示ページの内容を入れる -->
+
+</body>
+</html>
+
+
+
+
+<section id="exhibition">
     <div class="section-head"><h2>Exhibition</h2><span class="section-no">01 / NEWS</span></div>
     <div class="exhibition">
       <div class="exhibition-image" role="img" aria-label="Abstract exhibition artwork placeholder"></div>
