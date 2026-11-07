@@ -17,8 +17,9 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);l
 a{color:inherit;text-decoration:none}
 a:hover{opacity:.62}
 .wrap{width:min(1120px,calc(100% - 48px));margin:auto}
-header{height:65px
+header{
        padding:0 4%;
+  border-bottom: 1px solid var(--line);
        ;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
 .logo{font:italic 22px var(--serif);letter-spacing:.02em}
 nav{display:flex;gap:28px;font-size:10px;letter-spacing:.15em}
@@ -62,7 +63,7 @@ footer{padding:28px 0 38px;border-top:1px solid var(--line);display:flex;justify
 .accent-mark{display:inline-block;background:var(--accent);padding:0 5px}
 @media(max-width:700px){
  .wrap{width:min(100% - 34px,560px)}
- header{height:65px}nav{gap:13px;font-size:8px}
+ header{padding:10px 4%}nav{gap:13px;font-size:8px}
  .hero{grid-template-columns:1fr;min-height:auto;padding:58px 0 68px;gap:32px}
  .hero-art{height:340px}
  .scroll{margin-top:30px}
